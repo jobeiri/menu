@@ -1,0 +1,116 @@
+.menu {
+  font-family: sans-serif;
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+  display: table;
+  margin: 0 0.75rem;
+}
+
+.menu:before {
+  left: -0.75;
+}
+
+.menu:after {
+  right: -0.75;
+}
+
+.menu-item {
+  display: block;
+  float: left;
+  white-space: nowrap;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.menu-item:last-child {
+  margin-right: 0;
+}
+
+.menu-item .toggle {
+  display: none;
+}
+
+.menu-item .toggle:checked ~ .expander {
+  max-width: 16rem;
+  background: #222;
+}
+
+.menu-item .toggle:checked ~ .expander .menu-icon {
+  color: white;
+  animation: none;
+}
+
+.menu-item .toggle:checked ~ .expander .menu-text {
+  color: white;
+}
+
+.menu-item .expander {
+  max-width: 3rem;
+  overflow: hidden;
+  transition: all ease-in-out 233ms;
+  padding: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.menu-item .expander:hover {
+  background: #000;
+}
+
+.menu-item .expander:hover .menu-icon {
+  color: white;
+  animation: jiggle ease-in-out 400ms infinite;
+}
+
+.menu-item label {
+  line-height: 3rem;
+}
+
+.menu-item .menu-icon {
+  display: inline-block;
+  font-size: 3rem;
+  line-height: 3rem;
+  vertical-align: middle;
+  width: 3rem;
+  text-align: center;
+  margin-right: 0.5rem;
+  transition: color ease-in-out 80ms;
+}
+
+.menu-item .menu-text {
+  line-height: 3rem;
+  color: transparent;
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 1.5rem;
+  transition: color ease-out 333ms;
+}
+
+.menu-title {
+  color: white;
+  font-size: 1.5rem;
+  display: block;
+  float: left;
+  line-height: 3rem;
+  padding: 1.5rem;
+}
+
+.positioner {
+  display: table;
+  margin: 0 auto;
+  margin-top: calc(50vh - 3.75rem);
+}
+
+@keyframes jiggle {
+  0% {
+    transform: none;
+  }
+  25% {
+    transform: rotateZ(5deg);
+  }
+  75% {
+    transform: rotateZ(-5deg);
+  }
+  100% {
+    transform: none;
+  }
+}
